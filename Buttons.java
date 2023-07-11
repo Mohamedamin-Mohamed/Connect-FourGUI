@@ -25,69 +25,53 @@ public class Buttons implements ActionListener{
 	private JLabel label;
 	private int turn = 0;
 	private String player = "Red";
-
-
-	public Buttons(JFrame frame, JLabel label) {
-		this.frame = frame;
-		this.label = label;
-		buttons = new JButton[6][7]; //board of 6 rows & 7 columns
-		for(int i = 0; i < buttons.length; i++) {
-			for(int j = 0; j < buttons[i].length;j++) {
-				buttons[i][j] = new JButton(); //create a 
-button at each index
-				buttons[i][j].setActionCommand(i + "-" + 
-j);//each button will have its own unique action
-				
-buttons[i][j].addActionListener(this);//set an event listener for each 
-button
-				buttons[i][j].setOpaque(true);
+	
+   public Buttons(JFrame frame, JLabel label) {
+	this.frame = frame;
+	this.label = label;
+	buttons = new JButton[6][7]; //board of 6 rows & 7 columns
+	   
+  for(int i = 0; i < buttons.length; i++) {
+	for(int j = 0; j < buttons[i].length;j++) {
+	buttons[i][j] = new JButton(); //create a button at each index
+	buttons[i][j].setActionCommand(i + "-" + j);//each button will have its own unique action
+        buttons[i][j].addActionListener(this);//set an event listener for each button
+	buttons[i][j].setOpaque(true);
 			}
 		}
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		JButton button = (JButton) e.getSource();
-		if(!button.isEnabled()) {
-			JOptionPane.showMessageDialog(null, "Cell already 
-clicked", "Cell Click", JOptionPane.INFORMATION_MESSAGE);
-			return;  /*if a button is clicked a second time, 
-then there is no reason to perform any operations,
-			         because the button is disabled*/
+  public void actionPerformed(ActionEvent e) {
+	JButton button = (JButton) e.getSource();
+  if(!button.isEnabled()) {
+	JOptionPane.showMessageDialog(null, "Cell already 
+        clicked", "Cell Click", JOptionPane.INFORMATION_MESSAGE);
+			return;  /*if a button is clicked a second time, then there is no reason to perform any operations, because the button is disabled*/
 		}
+  else {
+	button.setEnabled(false); //this line will be 
+        triggered if its the first time that the button is being clicked,
+	turn++;
 
-		else {
-			button.setEnabled(false); //this line will be 
-triggered if its the first time that the button is being clicked,
-			turn++;
+	String[] position = e.getActionCommand().split("-");/*array will split the action string into their appropriate rows and columns*/
+	int row = Integer.parseInt(position[0]);
+	int col = Integer.parseInt(position[1]);
+	  
+	button = buttons[row][col];
+	button.setBackground((player.equals("Red"))? 
+        Color.red : Color.yellow);//also alternate the players color		
+	player = player.equals("Red")? "Yellow" : "Red"; 
+        /*alternate the players name, if its yellows turn, then set the background of the clicked button to be the current players color*/
+	label.setText(player + " players turn!");
 
-			String[] position = 
-e.getActionCommand().split("-");/*array will split the action string
-			into their appropriate rows and columns*/
-			int row = Integer.parseInt(position[0]);
-			int col = Integer.parseInt(position[1]);
+	CheckWinner winLose = new CheckWinner(buttons, row, col); 
+	boolean winner = winLose.getWinner();
 
+	new OutputWinner(frame, buttons, label, winner, turn, player);
 
-			button = buttons[row][col];
-			button.setBackground((player.equals("Red"))? 
-Color.red : Color.yellow);//also alternate the players color
-			
-			player = player.equals("Red")? "Yellow" : "Red"; 
-/*alternate the players name, if its yellows turn,
-			then set the background of the clicked button to 
-be the current players color*/
-			label.setText(player + " players turn!");
-
-			CheckWinner winLose = new CheckWinner(buttons, 
-row, col); 
-			boolean winner = winLose.getWinner();
-
-			new OutputWinner(frame, buttons, label, winner, 
-turn, player);
-
-			label.setFont(new Font(null, Font.BOLD, 30));
-			
-label.setHorizontalAlignment(SwingConstants.CENTER);
+        label.setFont(new Font(null, Font.BOLD, 30));	
+        label.setHorizontalAlignment(SwingConstants.CENTER);
 		}
 	}
 	public JButton[][] getButtons() {
