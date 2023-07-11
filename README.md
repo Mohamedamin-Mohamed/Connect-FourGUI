@@ -1,7 +1,19 @@
 # Connect-FourGUI
+The Connect Four GUI App is a Java-based graphical user interface (GUI) application that allows users to play the classic game of Connect Four. The game follows the traditional rules, where two players take turns dropping colored discs into a grid, aiming to form a horizontal, vertical, or diagonal line of four discs of their color.
 
+Features of the App are;
 
+Interactive GUI: The application provides a user-friendly graphical interface where players can click on the grid to place their discs and see the game board visually updated.
 
+Turn-based Gameplay: The game enforces turn-based gameplay, allowing each player to take their turn by clicking on the desired column to drop their disc.
+
+Win Detection: The app automatically detects when a player has won the game by connecting four discs in a row and displays a victory message.
+
+Draw Detection: The app detects if the game ends in a draw when all cells are filled, without any player achieving a winning combination.
+
+Play Again Option: After the game ends, the app prompts the user to choose whether they want to play again. If selected, a new game starts with the game board reset. If not, the application can be closed.
+
+Contributions to the project are welcome. If you find any bugs or want to suggest new features, please create an issue or submit a pull request.
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
