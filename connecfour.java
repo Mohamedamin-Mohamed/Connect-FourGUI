@@ -24,10 +24,11 @@ public class Connect_FourGUI extends JFrame implements ActionListener{
 	Connect_FourGUI(){
 		setTitle("Connect Four GUI App");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(800,200);
+		//setSize(800,600);
 		setLayout(new BorderLayout());
-		setVisible(true);
-		pack();
+		
+		//pack();
+        
 
 		label = new JLabel(player + " players turn!");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
@@ -58,13 +59,17 @@ button
 		}
 		//panel.add(label);
 		add(panel, BorderLayout.CENTER);
+		setSize(800, 600);
+		setLocationRelativeTo(null);
+        setVisible(true);
+        //pack();
 	}
 	public void actionPerformed(ActionEvent e) {
 		JButton button = (JButton) e.getSource();
 		if(!button.isEnabled()) return;//the second a button is 
 clicked, then there is no reason to perform any operations,
 		// because the button is disabled
-		
+
 		String[] position = e.getActionCommand().split("-");
 		int row = Integer.parseInt(position[0]);
 		int col = Integer.parseInt(position[1]);
@@ -72,7 +77,7 @@ clicked, then there is no reason to perform any operations,
 
 		button = buttons[row][col];
 		Color color = button.getBackground();
-		
+
 		boolean winner = checkWinner(buttons, color, turn);
 
 		if(winner) {
@@ -96,7 +101,7 @@ button to be the current players color
 		button.setBackground((player.equals("Red"))? Color.yellow 
 : Color.red);//also alternate the players color, if red was playing then,
 		label.setText(player + " players turn!");
-		
+
 		label.setFont(new Font(null, Font.BOLD, 30));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 
@@ -161,4 +166,3 @@ if(buttons[i][j].getBackground().equals(currColor) && buttons[i - 1][j +
 		});
 	}
 }
-
