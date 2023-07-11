@@ -21,8 +21,7 @@ public class OutputWinner {
 	private int turn;
 	private String player;
 
-	public OutputWinner(JFrame frame, JButton[][] buttons, JLabel 
-label, boolean winner, int turn, String player){
+	public OutputWinner(JFrame frame, JButton[][] buttons, JLabel label, boolean winner, int turn, String player){
 		this.frame = frame;
 		this.buttons = buttons;
 		this.label = label;
@@ -34,28 +33,20 @@ label, boolean winner, int turn, String player){
 
 	public void outputWinner() {
 		if(winner) {
-			player = player.equals("Red")? "Yellow" : "Red"; 
-//alternate the players name
+			player = player.equals("Red")? "Yellow" : "Red"; //alternate the players name
 			label.setText(player + " wins!");
-
-			int returnCode = 
-JOptionPane.showConfirmDialog(null, player + " player wins, Game Over. 
-Want to play again", "Game stats", JOptionPane.YES_NO_OPTION);
-			//0 will be returned if player wants to play again 
-and 1 if vice versa
+			
+			//0 will be returned if player wants to play again and 1 if vice versa
+			int returnCode = JOptionPane.showConfirmDialog(null, player + " player wins, Game Over. Want to play again", "Game stats", JOptionPane.YES_NO_OPTION);
 			if (returnCode == JOptionPane.YES_OPTION) 
 				resetBoard();
-
 			else 
-				closeFrame(); //close the frame if user 
-doesn't want to play again
+				closeFrame(); //close the frame if user doesn't want to play again
 		}
 
 		else if(turn == 42) {
-			JOptionPane.showMessageDialog(null, "Game is draw, 
-Game Over", "Game stats", JOptionPane.INFORMATION_MESSAGE);
-			closeFrame();//lets close the frame even if the 
-game is draw
+			JOptionPane.showMessageDialog(null, "Game is draw, Game Over", "Game stats", JOptionPane.INFORMATION_MESSAGE);
+			closeFrame(); //lets close the frame even if the game is draw
 			return;
 		}
 	}
@@ -66,10 +57,8 @@ game is draw
 				buttons[i][j].setBackground(null);
 			}
 		}
-		turn = 0;//since we are starting a new game, we rest turn 
-to 0
-		player = "Red"; //just like we did when we created the 
-frame, we'll let red player start the game
+		turn = 0; //since we are starting a new game, we rest turn to 0
+		player = "Red"; //just like we did when we created the frame, we'll let red player start the game
 		frame.setTitle("Connect Four GUI App");
 	}
 	private void closeFrame() {
