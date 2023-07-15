@@ -27,6 +27,9 @@ public class Buttons implements ActionListener{
 	private String player = "Red";
 	
    public Buttons(JFrame frame, JLabel label) {
+	intializeComponents(frame, label);
+   }
+	private void intializeComponents(JFrame frame, JLabel label){
 	this.frame = frame;
 	this.label = label;
 	buttons = new JButton[6][7]; //board of 6 rows & 7 columns
@@ -45,13 +48,11 @@ public class Buttons implements ActionListener{
   public void actionPerformed(ActionEvent e) {
 	JButton button = (JButton) e.getSource();
   if(!button.isEnabled()) {
-	JOptionPane.showMessageDialog(null, "Cell already 
-        clicked", "Cell Click", JOptionPane.INFORMATION_MESSAGE);
+	JOptionPane.showMessageDialog(null, "Cell already clicked", "Cell Click", JOptionPane.INFORMATION_MESSAGE);
 			return;  /*if a button is clicked a second time, then there is no reason to perform any operations, because the button is disabled*/
 		}
   else {
-	button.setEnabled(false); //this line will be 
-        triggered if its the first time that the button is being clicked,
+	button.setEnabled(false); //this line will be  triggered if its the first time that the button is being clicked
 	turn++;
 
 	String[] position = e.getActionCommand().split("-");/*array will split the action string into their appropriate rows and columns*/
@@ -67,13 +68,14 @@ public class Buttons implements ActionListener{
 
 	CheckWinner winLose = new CheckWinner(buttons, row, col); 
 	boolean winner = winLose.getWinner();
-
+  
 	new OutputWinner(frame, buttons, label, winner, turn, player);
 
         label.setFont(new Font(null, Font.BOLD, 30));	
         label.setHorizontalAlignment(SwingConstants.CENTER);
 		}
 	}
+	
 	public JButton[][] getButtons() {
 		return buttons;
 	}
