@@ -62,7 +62,7 @@ public class CheckWinner {
 	// Check diagonal (up-right)
   for (int i = row + 3, j = col - 3; i >= row && j <= col; i--, j++) {
 	if (i >= 0 && i - 3 < 6 && j >= 0 && j + 3 < 7) {
-	if buttons[i][j].getBackground().equals(currColor)
+	if (buttons[i][j].getBackground().equals(currColor)
 	&& buttons[i - 1][j + 1].getBackground().equals(currColor)
 	&& buttons[i - 2][j + 2].getBackground().equals(currColor)
 	&& buttons[i - 3][j + 3].getBackground().equals(currColor)) {
