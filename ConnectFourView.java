@@ -16,7 +16,7 @@ import javax.swing.SwingConstants;
  * modified 07/16/2023               
  * Description:This class acts as an interface between the user and the application,
  * presenting information to the user and capturing their interactions, 
- * while delegating the processing of user actions to the controller.
+ * whilst delegating the processing of user actions to the controller.
  */
 public class ConnectFourView {
     private JFrame frame;
