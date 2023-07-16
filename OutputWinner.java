@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  * Author: Mohamedamin Mohamed          
  * Contact mohamedamin204080@gmail.com  
  * Created 07/10/2023                   
- * Modified: 07/11/2023                 
+ * Modified: 07/16/2023                 
  * Description:This class handles the logic for displaying the winner or a 
 draw message.           
  */
