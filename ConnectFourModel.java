@@ -1,5 +1,15 @@
 import java.awt.Color;
 import javax.swing.JButton;
+
+/*
+ * Files: ConnectFourModel.java          
+ * Author: Mohamedamin Mohamed          
+ * Contact mohamedamin204080@gmail.com  
+ * Created 07/16/2023    
+ * modified 07/16/2023               
+ * Description:This class encapsulates the core functionality and logic of the Connect Four game
+ */
+
 public class ConnectFourModel {
     private JButton[][] buttons;
     private int turn;

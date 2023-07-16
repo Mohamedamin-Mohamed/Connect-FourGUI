@@ -4,18 +4,17 @@ import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
 
-/*********************************************************
+/*
  * Files: Connect_FourGUI.java          
  * Author: Mohamedamin Mohamed          
  * Contact mohamedamin204080@gmail.com  
  * Created 07/10/2023                   
- * Modified: 07/14/2023                 
+ * Modified: 07/11/2023                 
  * Description:This program builds a connect four" simulator!
  * This class represents the main application window. 
  * It will create the JFrame and set up the UI components.             
- **********************************************************/                                   
+ */                                   
 
 public class Connect_FourGUI {
 	private JFrame frame;

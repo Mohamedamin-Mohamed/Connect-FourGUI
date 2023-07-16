@@ -3,6 +3,15 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
+/*
+ * Files: ConnectController.java          
+ * Author: Mohamedamin Mohamed          
+ * Contact mohamedamin204080@gmail.com  
+ * Created 07/16/2023                   
+ * Modified: 07/16/2023                 
+ * Description:This class is responsible for handling user interactions 
+ * and updating the model accordingly.             
+ */  
 public class ConnectFourController implements ActionListener{
     private ConnectFourModel model;
     private ConnectFourView view;

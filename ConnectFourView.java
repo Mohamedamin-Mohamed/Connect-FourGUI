@@ -7,8 +7,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import javax.swing.JPanel;
 
+/*
+ * Files: ConnectFourView.java          
+ * Author: Mohamedamin Mohamed          
+ * Contact mohamedamin204080@gmail.com  
+ * Created 07/16/2023    
+ * modified 07/16/2023               
+ * Description:This class acts as an interface between the user and the application,
+ * presenting information to the user and capturing their interactions, 
+ * while delegating the processing of user actions to the controller.
+ */
 public class ConnectFourView {
     private JFrame frame;
     private JLabel label;
