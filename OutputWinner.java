@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /*
- * Files: Connect_FourGUI.java          
+ * Files: OutputWinner.java          
  * Author: Mohamedamin Mohamed          
  * Contact mohamedamin204080@gmail.com  
  * Created 07/10/2023                   
