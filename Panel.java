@@ -3,11 +3,11 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 /*
- * Files: Connect_FourGUI.java          
+ * Files: Panel.java          
  * Author: Mohamedamin Mohamed          
  * Contact mohamedamin204080@gmail.com  
  * Created 07/10/2023                   
- * Modified: 07/11/2023              
+ * Modified: 07/16/2023              
  * Description:This class represents the game board panel.
  */
  public class Panel{
