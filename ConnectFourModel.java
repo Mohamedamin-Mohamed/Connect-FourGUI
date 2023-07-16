@@ -1,6 +1,5 @@
 import java.awt.Color;
 import javax.swing.JButton;
-
 public class ConnectFourModel {
     private JButton[][] buttons;
     private int turn;
