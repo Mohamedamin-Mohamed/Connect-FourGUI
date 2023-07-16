@@ -5,7 +5,8 @@ import javax.swing.JButton;
  * Files: Connect_FourGUI.java          
  * Author: Mohamedamin Mohamed          
  * Contact mohamedamin204080@gmail.com  
- * Created 07/10/2023                   
+ * Created 07/10/2023    
+ * modified 07/16/2023               
  * Description:This class handles the logic for checking if a player has 
 won the game.             
  */
