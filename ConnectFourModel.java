@@ -7,7 +7,7 @@ import javax.swing.JButton;
  * Contact mohamedamin204080@gmail.com  
  * Created 07/16/2023    
  * modified 07/16/2023               
- * Description:This class encapsulates the core functionality and logic of the Connect Four game
+ * Description:This class encapsulates the core functionality and logic of the game
  */
 
 public class ConnectFourModel {
