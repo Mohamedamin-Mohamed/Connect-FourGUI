@@ -10,7 +10,7 @@ import javax.swing.SwingConstants;
  * Author: Mohamedamin Mohamed          
  * Contact mohamedamin204080@gmail.com  
  * Created 07/10/2023                   
- * Modified: 07/11/2023                 
+ * Modified: 07/16/2023                 
  * Description:This program builds a connect four" simulator!
  * This class represents the main application window. 
  * It will create the JFrame and set up the UI components.             
